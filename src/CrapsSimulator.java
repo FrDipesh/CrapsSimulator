@@ -6,7 +6,7 @@ public class CrapsSimulator {
         Scanner scan = new Scanner(System.in);
         String playAgain;
         boolean done = false;
-        int point = 0;
+        boolean validYN = false;
         int sum = 0;
         int dieOne = 0;
         int dieTwo = 0;
@@ -28,22 +28,52 @@ public class CrapsSimulator {
                 dieTwo = rand.nextInt(6) + 1;
                 System.out.print("\nRoll 2: " + dieTwo);
             }
-l
+
             sum = dieOne + dieTwo;
             System.out.println("\nSum: " + sum);
+            if (sum == 7 || sum == 11) {
+                System.out.println("You rolled a: " + sum + " You WIN!");
+            }
+            if (sum == 2 || sum == 3 || sum == 12) {
+                System.out.println("You rolled a: " + sum + " You Crapped out.");
+            }
 
+            if (sum == 4 || sum == 5 || sum == 6 || sum == 8 || sum == 9 || sum == 10) {
+                System.out.println("You must roll: " + sum + " to Win. If you roll a 7 it will result in a loss.");
+                for (int i = 1; i <= 1; i++) {
+                    dieOne = rand.nextInt(6) + 1;
+                    System.out.print("\n\nRoll 1: " + dieOne);
+                }
+                for (int i = 1; i <= 1; i++) {
+                    dieTwo = rand.nextInt(6) + 1;
+                    System.out.print("\nRoll 2: " + dieTwo);
+                    else if (sum == 7) {
+                        System.out.println("You rolled a 7 you lose");
+                        else if (sum == sum) {
+                            System.out.println("You WIN!");
+                        }
+                    }
 
-            System.out.println("\n\nDo you want to play again? Type [Y] for Yes or [N] for No.");
-            if (scan.hasNextLine()) {
-                playAgain = scan.nextLine();
-                if (playAgain.equalsIgnoreCase("y")) {
-                    done = false;
-                } else if (playAgain.equalsIgnoreCase("n")) {
-                    done = true;
-                } else {
-                    System.out.println("Invalid Please pick [Y] or [N]");
                 }
             }
+
+            do {
+                System.out.println("\n\nDo you want to play again? Type [Y] for Yes or [N] for No.");
+                if (scan.hasNextLine()) {
+                    playAgain = scan.nextLine();
+                    if (playAgain.equalsIgnoreCase("y")) {
+                        done = false;
+                        validYN = true;
+                    } else if (playAgain.equalsIgnoreCase("n")) {
+                        done = true;
+                        validYN = true;
+                    } else {
+                        System.out.println("Invalid Please pick [Y] or [N]");
+                    }
+                }
+            } while (!validYN);
+
+
         } while (!done);
     }
 }
