@@ -7,18 +7,16 @@ public class CrapsSimulator {
         String playAgain;
         boolean done = false;
         boolean validYN = false;
-        int sum = 0;
+        int sum;
         int dieOne = 0;
         int dieTwo = 0;
         Random rand = new Random();
 
         do {
             System.out.println("The Rules of the Game ↓");
-            System.out.println("1: There is an initial roll of 2 dice, resulting in a sum of 2 – 12");
-            System.out.println("2: If the sum is 2, 3, or 12, it is called \"craps\" or \"crapping out\", and the game is over with a loss.");
-            System.out.println("3: There is an initial roll of 2 dice, resulting in a sum of 2 – 12");
-            System.out.println("4: There is an initial roll of 2 dice, resulting in a sum of 2 – 12");
-            System.out.println("5: There is an initial roll of 2 dice, resulting in a sum of 2 – 12");
+            System.out.println("1: If the sum is 2, 3, or 12, it is called \"craps\" or \"crapping out\", and the game is over with a loss.");
+            System.out.println("2: If the sum is 7 or 11, it is called a \"natural\" and the game is over with a win.");
+            System.out.println("3: For all other values, the sum becomes \"the point\", and the user makes subsequent rolls until they either roll a 7, in which case they lose, or they roll the point sum, in which case they win.");
 
             for (int i = 1; i <= 1; i++) {
                 dieOne = rand.nextInt(6) + 1;
@@ -47,9 +45,9 @@ public class CrapsSimulator {
                 for (int i = 1; i <= 1; i++) {
                     dieTwo = rand.nextInt(6) + 1;
                     System.out.print("\nRoll 2: " + dieTwo);
-                    else if (sum == 7) {
+                    if (sum == 7) {
                         System.out.println("You rolled a 7 you lose");
-                        else if (sum == sum) {
+                        if (sum == sum) {
                             System.out.println("You WIN!");
                         }
                     }
