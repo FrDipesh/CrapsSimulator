@@ -8,6 +8,7 @@ public class CrapsSimulator {
         boolean done = false;
         boolean validYN = false;
         int sum;
+        int sumTwo;
         int dieOne = 0;
         int dieTwo = 0;
         Random rand = new Random();
@@ -51,6 +52,16 @@ public class CrapsSimulator {
                             System.out.println("You WIN!");
                         }
                     }
+                    sumTwo = dieOne + dieTwo;
+                    System.out.println("\nSum: " + sumTwo);
+                    if (sum == sumTwo) {
+                        System.out.println("You WIN!");
+                    }
+                    else {
+                        System.out.println("You Lose!");
+                    }
+
+
 
                 }
             }
